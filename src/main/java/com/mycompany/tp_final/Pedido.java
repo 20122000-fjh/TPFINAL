@@ -14,6 +14,8 @@ public class Pedido {
     private String estado;
     private LocalDate fechaEntrega;
     private LocalDate fechaCreacion;
+    private MetodoDePago metodoDePago;
+    private Transportista transportista;
 
     public Pedido(long codigo, String destino, String estado, LocalDate fechaEntrega, LocalDate fechaCreacion) {
         this.codigo = codigo;
@@ -62,4 +64,22 @@ public class Pedido {
     public void setFechaCreacion(LocalDate fechaCreacion) {
         this.fechaCreacion = fechaCreacion;
     }
+
+    public MetodoDePago getMetodoDePago() {
+        return metodoDePago;
+    }
+
+    public void setMetodoDePago(MetodoDePago metodoDePago) {
+        this.metodoDePago = metodoDePago;
+    }
+
+    public Transportista getTransportista() {
+        return transportista;
+    }
+
+    public void setTransportista(Transportista transportista) {
+        this.transportista = transportista;
+    }
+    
+    
 }

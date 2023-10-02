@@ -4,6 +4,7 @@
  */
 package com.mycompany.tp_final;
 import java.time.LocalDate;
+import java.util.List;
 
 /**
  *
@@ -17,6 +18,7 @@ public class Cliente {
     private String correo;
     private String direccion;
     private LocalDate fechaNacimiento;
+     private List<Pedido> pedidos;
 
     public Cliente(long dni, String nombre, String apellido, long telefono, String correo, String direccion, LocalDate fechaNacimiento) {
         this.dni = dni;
@@ -82,5 +84,15 @@ public class Cliente {
 
     public void setFechaNacimiento(LocalDate fechaNacimiento) {
         this.fechaNacimiento = fechaNacimiento;
-    } 
+    }
+
+    public List<Pedido> getPedidos() {
+        return pedidos;
+    }
+
+    public void setPedidos(List<Pedido> pedidos) {
+        this.pedidos = pedidos;
+    }
+    
+    
 }
