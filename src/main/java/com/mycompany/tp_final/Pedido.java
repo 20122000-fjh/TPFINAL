@@ -4,6 +4,7 @@
  */
 package com.mycompany.tp_final;
 import java.time.LocalDate;
+import java.util.List;
 /**
  *
  * @author Lenovo
@@ -16,14 +17,22 @@ public class Pedido {
     private LocalDate fechaCreacion;
     private MetodoDePago metodoDePago;
     private Transportista transportista;
+    private int id_centrodistribucion;
+    private List<Producto> productos;
 
-    public Pedido(long codigo, String destino, String estado, LocalDate fechaEntrega, LocalDate fechaCreacion) {
+    public Pedido(long codigo, String destino, String estado, LocalDate fechaEntrega, LocalDate fechaCreacion, MetodoDePago metodoDePago, Transportista transportista, int id_centrodistribucion,List<Producto> productos) {
         this.codigo = codigo;
         this.destino = destino;
         this.estado = estado;
         this.fechaEntrega = fechaEntrega;
         this.fechaCreacion = fechaCreacion;
+        this.metodoDePago = metodoDePago;
+        this.transportista = transportista;
+        this.id_centrodistribucion = id_centrodistribucion;
+        this.productos = productos;
     }
+
+    
 
     public long getCodigo() {
         return codigo;
@@ -80,6 +89,21 @@ public class Pedido {
     public void setTransportista(Transportista transportista) {
         this.transportista = transportista;
     }
-    
+
+    public int getId_centrodistribucion() {
+        return id_centrodistribucion;
+    }
+
+    public void setId_centrodistribucion(int id_centrodistribucion) {
+        this.id_centrodistribucion = id_centrodistribucion;
+    }
+
+    public List<Producto> getProductos() {
+        return productos;
+    }
+
+    public void setProductos(List<Producto> productos) {
+        this.productos = productos;
+    }
     
 }
