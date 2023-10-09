@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.mycompany.tp_final;
+package MODELO;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -18,9 +18,11 @@ public class Cliente {
     private String correo;
     private String direccion;
     private LocalDate fechaNacimiento;
-     private List<Pedido> pedidos;
+    private List<Pedido> pedidos;
+    private String nombre_usuario;
+    private String contraseña; 
 
-    public Cliente(long dni, String nombre, String apellido, long telefono, String correo, String direccion, LocalDate fechaNacimiento) {
+    public Cliente(long dni, String nombre, String apellido, long telefono, String correo, String direccion, LocalDate fechaNacimiento,String nombre_usuario,String contraseña) {
         this.dni = dni;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -28,6 +30,8 @@ public class Cliente {
         this.correo = correo;
         this.direccion = direccion;
         this.fechaNacimiento = fechaNacimiento;
+        this.nombre_usuario = nombre_usuario;
+        this.contraseña = contraseña;
     }
 
     public long getDni() {
@@ -92,6 +96,22 @@ public class Cliente {
 
     public void setPedidos(List<Pedido> pedidos) {
         this.pedidos = pedidos;
+    }
+
+    public String getNombre_usuario() {
+        return nombre_usuario;
+    }
+
+    public void setNombre_usuario(String nombre_usuario) {
+        this.nombre_usuario = nombre_usuario;
+    }
+
+    public String getContraseña() {
+        return contraseña;
+    }
+
+    public void setContraseña(String contraseña) {
+        this.contraseña = contraseña;
     }
     
     

@@ -2,20 +2,20 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.mycompany.tp_final;
+package MODELO;
 
 /**
  *
  * @author Lenovo
  */
 public class Producto {
-    int id;
-    String nombre;
-    String categoria;
-    boolean preferido;
-    float precio;
-    int stock;
-    int id_proveedor;
+    private int id;
+    private String nombre;
+    private String categoria;
+    private boolean preferido;
+    private float precio;
+    private int stock;
+    private int id_proveedor;
 
     public Producto(int id, String nombre, String categoria, boolean preferido, float precio, int stock, int id_proveedor) {
         this.id = id;
