@@ -297,7 +297,7 @@ public class Ventana_Registro_Cliente extends javax.swing.JPanel {
     }//GEN-LAST:event_campo_confirmacion_contraseñaActionPerformed
 
     private void CrearClienteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CrearClienteMouseClicked
-        
+
         long dni,telefono;
         String nombre,apellido,correo,direccion,fecha,nombre_usuario,contraseña,confirm_contra;
         LocalDate fecha_nacimiento;
