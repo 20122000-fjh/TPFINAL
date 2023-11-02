@@ -5,7 +5,8 @@
 package CASOSDEUSO;
 
 import MODELO.Cliente;
-import java.time.LocalDate;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 
 /**
@@ -297,24 +298,29 @@ public class Ventana_Registro_Cliente extends javax.swing.JPanel {
     }//GEN-LAST:event_campo_confirmacion_contraseñaActionPerformed
 
     private void CrearClienteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CrearClienteMouseClicked
-
-        long dni,telefono;
-        String nombre,apellido,correo,direccion,fecha,nombre_usuario,contraseña,confirm_contra;
-        LocalDate fecha_nacimiento;
-        dni = Long.parseLong(campo_dni.getText());
-        nombre = campo_nombre.getText();
-        apellido = campo_apellido.getText();
-        telefono = Long.parseLong(campo_telefono.getText());
-        correo = campo_correo.getText();
-        direccion = campo_direccion.getText();
-        fecha = campo_fecha_nacimiento.getText();
-        fecha_nacimiento = LocalDate.parse(fecha);
-        nombre_usuario = campo_nombre_usuario.getText();
-        contraseña = campo_contraseña.getText();
-        confirm_contra = campo_confirmacion_contraseña.getText();
-        if(contraseña.equals(confirm_contra)){
-            Cliente nuevo_cliente = new Cliente(dni,nombre,apellido,telefono,correo,direccion,fecha_nacimiento,nombre_usuario,contraseña);
+        try{
+            long dni,telefono;
+            String nombre,apellido,correo,direccion,fecha,nombre_usuario,contraseña,confirm_contra;
+            Date fecha_nacimiento;
+            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+            dni = Long.parseLong(campo_dni.getText());
+            nombre = campo_nombre.getText();
+            apellido = campo_apellido.getText();
+            telefono = Long.parseLong(campo_telefono.getText());
+            correo = campo_correo.getText();
+            direccion = campo_direccion.getText();
+            fecha = campo_fecha_nacimiento.getText();
+            fecha_nacimiento = dateFormat.parse(fecha);
+            nombre_usuario = campo_nombre_usuario.getText();
+            contraseña = campo_contraseña.getText();
+            confirm_contra = campo_confirmacion_contraseña.getText();
+            if(contraseña.equals(confirm_contra)){
+                Cliente nuevo_cliente = new Cliente(dni,nombre,apellido,telefono,correo,direccion,fecha_nacimiento,nombre_usuario,contraseña);
+            }
+        }catch(Exception e){
+            System.out.println("error");
         }
+        
     }//GEN-LAST:event_CrearClienteMouseClicked
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

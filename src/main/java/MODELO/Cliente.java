@@ -1,28 +1,36 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-package MODELO;
-import java.time.LocalDate;
-import java.util.List;
 
-/**
- *
- * @author Lenovo
- */
-public class Cliente {
+package MODELO;
+import java.io.Serializable;
+import java.util.Date;
+import java.util.List;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+
+
+@Entity
+public class Cliente implements Serializable {
+    @Id
     private long dni;
     private String nombre;
     private String apellido;
     private long telefono;
     private String correo;
     private String direccion;
-    private LocalDate fechaNacimiento;
     private List<Pedido> pedidos;
     private String nombre_usuario;
     private String contraseña; 
+    @Temporal(TemporalType.DATE)
+    private Date fechaNacimiento;
 
-    public Cliente(long dni, String nombre, String apellido, long telefono, String correo, String direccion, LocalDate fechaNacimiento,String nombre_usuario,String contraseña) {
+    public Cliente() {
+    // Constructor predeterminado
+    }
+
+    
+    public Cliente(long dni, String nombre, String apellido, long telefono, String correo, String direccion, Date fechaNacimiento,String nombre_usuario,String contraseña) {
         this.dni = dni;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -82,11 +90,11 @@ public class Cliente {
         this.direccion = direccion;
     }
 
-    public LocalDate getFechaNacimiento() {
+    public Date getFechaNacimiento() {
         return fechaNacimiento;
     }
 
-    public void setFechaNacimiento(LocalDate fechaNacimiento) {
+    public void setFechaNacimiento(Date fechaNacimiento) {
         this.fechaNacimiento = fechaNacimiento;
     }
 

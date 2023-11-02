@@ -4,6 +4,8 @@
 
 package MODELO;
 
+import PERSISTENCIA.controladorPersistencia;
+
 /**
  *
  * @author Lenovo
@@ -11,6 +13,6 @@ package MODELO;
 public class TP_FINAL {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!"); 
+        controladorPersistencia controlPersis = new controladorPersistencia();
     }
 }
